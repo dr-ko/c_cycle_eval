@@ -1,0 +1,630 @@
+{
+    "top_dir": "/home/skoirala/research/crescendo_tau/Data/",
+    "auxiliary": {
+        "mask_file": "./masks_n/_data/mask_model_valid_cTauObs.nc",
+        "mask_var": "mask",
+        "area_file": "landfrac/grarea_grid.nc",
+        "area_var": "grid_area",
+        "aridity_file": "./masks_n/_data/map_ari-modis_4c_bins_mod_model_valid_cTauObs.nc",
+        "aridity_var": "aridity_class",
+        "land_frac_file": "landfrac/landfraction.720.360.nc",
+        "land_frac_var": "landfraction"
+    },
+    "model_dict": {
+        "clm4": {
+            "model_name": "CLM4.5",
+            "model_file": "CLM45_CMCC",
+            "scn_prefix": "S",
+            "scn_prefix_file": "CLM45.CMCC_S",
+            "reso": "half",
+            "start_year": 1901,
+            "end_year": 2015,
+            "start_year_ts": 1901,
+            "end_year_ts": 2010,
+            "time_reso": "monthly"
+        },
+        "clm5": {
+            "model_name": "CLM5",
+            "model_file": "CLM5_0918",
+            "scn_prefix": "S",
+            "scn_prefix_file": "CLM5_S",
+            "reso": "half",
+            "start_year": 1901,
+            "end_year": 2015,
+            "start_year_ts": 1901,
+            "end_year_ts": 2010,
+            "time_reso": "monthly"
+        },
+        "jsbach": {
+            "model_name": "JSBACH",
+            "model_file": "JSBACH_0918",
+            "scn_prefix": "SJSBACH_S",
+            "scn_prefix_file": "JSBACH_S",
+            "reso": [
+                96,
+                192
+            ],
+            "start_year": 1700,
+            "end_year": 2016,
+            "start_year_ts": 1901,
+            "end_year_ts": 2010,
+            "time_reso": "monthly"
+        },
+        "jules": {
+            "model_name": "JULES",
+            "model_file": "JULES",
+            "scn_prefix": "S",
+            "scn_prefix_file": "JULES_S",
+            "reso": "half",
+            "start_year": 1860,
+            "end_year": 2014,
+            "start_year_ts": 1901,
+            "end_year_ts": 2010,
+            "time_reso": "monthly"
+        },
+        "lpj": {
+            "model_name": "LPJ-GUESS",
+            "model_file": "LPJ-GUESS",
+            "scn_prefix": "S",
+            "scn_prefix_file": "LPJ-GUESS_s",
+            "reso": "half",
+            "start_year": 1901,
+            "end_year": 2015,
+            "start_year_ts": 1901,
+            "end_year_ts": 2010,
+            "time_reso": "monthly"
+        },
+        "ipsl": {
+            "model_name": "ORCHIDEE",
+            "model_file": "ORCHIDEE",
+            "scn_prefix": "ORCHIDEE_S",
+            "scn_prefix_file": "ORCHIDEE_S",
+            "reso": "half",
+            "start_year": 1901,
+            "end_year": 2013,
+            "start_year_ts": 1901,
+            "end_year_ts": 2010,
+            "time_reso": "monthly"
+        },
+        "isba": {
+            "model_name": "SURFEX",
+            "model_file": "SURFEX",
+            "scn_prefix": "S",
+            "scn_prefix_file": "SURFEX_",
+            "reso": "half",
+            "start_year": 1901,
+            "end_year": 2015,
+            "start_year_ts": 1901,
+            "end_year_ts": 2010,
+            "time_reso": "monthly"
+        }
+    },
+    "obs_dict": {
+        "evapotrans": {
+            "obs_file": "Observation/LE.RS_METEO.EBC-ALL.MLM-ALL.METEO-ALL.720_360.monthly.2001-2013.ltMean.nc",
+            "obs_var": "LE",
+            "obs_src": "FLUXCOM",
+            "model_var": "evapotrans",
+            "plot_range_map": [
+                0.5,
+                4.5
+            ],
+            "plot_range_sca": [
+                0.5,
+                4.5
+            ],
+            "plot_range_diff": [
+                -2,
+                2
+            ],
+            "plot_range_ratio": [
+                0.5,
+                2
+            ],
+            "plot_range_zonal": [
+                0,
+                4
+            ],
+            "plot_range_fit": [
+                0,
+                1500
+            ],
+            "corr_factor_model": 31536000,
+            "long_name": "Total Evapotranspiration",
+            "title": "$ET$",
+            "unit": "$mm/year$",
+            "color_scale": "viridis_r"
+        },
+        "pr": {
+            "obs_file": "Observation/tau_obs4mipstandard_withCarvalhais2014mask/pr_fx_GPCC_BE_gn_full.nc",
+            "obs_var": "pr",
+            "obs_src": "GPCC",
+            "model_var": "pr",
+            "plot_range_map": [
+                0,
+                1800
+            ],
+            "plot_range_sca": [
+                0,
+                1800
+            ],
+            "plot_range_diff": [
+                -5,
+                5
+            ],
+            "plot_range_ratio": [
+                0.5,
+                2
+            ],
+            "plot_range_zonal": [
+                0,
+                3700
+            ],
+            "plot_range_fit": [
+                0,
+                3000
+            ],
+            "corr_factor_model": 31536000,
+            "long_name": "Mean Annual Precipitation",
+            "title": "$MAP$",
+            "unit": "$mm/year$",
+            "color_scale": "Blues"
+        },
+        "tas": {
+            "obs_file": "Observation/tau_obs4mipstandard_withCarvalhais2014mask/tas_fx_CRU_BE_gn_full.nc",
+            "obs_var": "tas",
+            "obs_src": "CRU",
+            "model_var": "tas",
+            "plot_range_map": [
+                260,
+                310
+            ],
+            "plot_range_sca": [
+                260,
+                310
+            ],
+            "plot_range_diff": [
+                -10,
+                10
+            ],
+            "plot_range_ratio": [
+                0.5,
+                2
+            ],
+            "plot_range_zonal": [
+                -20,
+                30
+            ],
+            "plot_range_fit": [
+                -20,
+                30
+            ],
+            "corr_factor_model": 1,
+            "long_name": "Mean Air Temperature",
+            "title": "$MAT$",
+            "unit": "$^{\\circ} C$",
+            "color_scale": "jet"
+        },
+        "c_veg": {
+            "obs_file": "Observation/cVeg_half.nc",
+            "obs_var": "cVeg",
+            "obs_src": "C2014",
+            "model_var": "cVeg",
+            "plot_range_map": [
+                0,
+                25
+            ],
+            "plot_range_sca": [
+                0,
+                35
+            ],
+            "plot_range_diff": [
+                -10,
+                10
+            ],
+            "plot_range_ratio": [
+                0.5,
+                2
+            ],
+            "plot_range_zonal": [
+                0,
+                25
+            ],
+            "plot_range_fit": [
+                0,
+                50
+            ],
+            "corr_factor_model": 1,
+            "long_name": "Total Vegetation Carbon",
+            "title": "$C_{veg}$",
+            "unit": "$kgC/m^2$",
+            "color_scale": "viridis_r"
+        },
+        "c_soil": {
+            "obs_file": "Observation/cSoilTotal_half.nc",
+            "obs_var": "cSoilTotal",
+            "obs_src": "C2014",
+            "model_var": "cSoilTotal",
+            "plot_range_map": [
+                0,
+                50
+            ],
+            "plot_range_sca": [
+                0,
+                75
+            ],
+            "plot_range_diff": [
+                -10,
+                10
+            ],
+            "plot_range_ratio": [
+                0.5,
+                2
+            ],
+            "plot_range_zonal": [
+                0,
+                25
+            ],
+            "plot_range_fit": [
+                0,
+                75
+            ],
+            "corr_factor_model": 1,
+            "long_name": "Total Soil Carbon",
+            "title": "$C_{soil}$",
+            "unit": "kgC/m^2$",
+            "color_scale": "plasma_r"
+        },
+        "gpp": {
+            "obs_file": "Observation/tau_obs4mipstandard_withCarvalhais2014mask/gpp_fx_Jung2011_BE_gn_full.nc",
+            "obs_var": "gpp",
+            "obs_src": "MTE",
+            "model_var": "gpp",
+            "plot_range_map": [
+                0.5,
+                4.5
+            ],
+            "plot_range_sca": [
+                0.5,
+                4.5
+            ],
+            "plot_range_diff": [
+                -2,
+                2
+            ],
+            "plot_range_ratio": [
+                0.5,
+                2
+            ],
+            "plot_range_zonal": [
+                0,
+                3.5
+            ],
+            "plot_range_fit": [
+                0,
+                4.0
+            ],
+            "corr_factor_model": 31536000,
+            "long_name": "Gross Primary Productivity",
+            "title": "$GPP$",
+            "unit": "$kgC/m^2/year$",
+            "color_scale": "viridis_r"
+        },
+        "mrso": {
+            "obs_file": "",
+            "obs_var": "",
+            "obs_src": "",
+            "model_var": "mrso",
+            "plot_range_map": [
+                0,
+                1
+            ],
+            "plot_range_sca": [
+                0,
+                1
+            ],
+            "plot_range_diff": [
+                -0.5,
+                0.5
+            ],
+            "plot_range_ratio": [
+                0.5,
+                2
+            ],
+            "plot_range_zonal": [
+                0,
+                1
+            ],
+            "plot_range_fit": [
+                0,
+                1.5
+            ],
+            "corr_factor_model": 1,
+            "long_name": "Moisture Content",
+            "title": "$\\theta$",
+            "unit": "$-$",
+            "color_scale": "Blues"
+        },
+        "mrro": {
+            "obs_file": "",
+            "obs_var": "",
+            "obs_src": "",
+            "model_var": "mrro",
+            "plot_range_map": [
+                0.5,
+                4.5
+            ],
+            "plot_range_sca": [
+                0.5,
+                4.5
+            ],
+            "plot_range_diff": [
+                -2,
+                2
+            ],
+            "plot_range_ratio": [
+                0.5,
+                2
+            ],
+            "plot_range_zonal": [
+                0,
+                5
+            ],
+            "plot_range_fit": [
+                0,
+                1
+            ],
+            "corr_factor_model": 31536000,
+            "long_name": "Total Runoff",
+            "title": "$Rn_{O}$",
+            "unit": "$mm/year$",
+            "color_scale": "Blues"
+        },
+        "ra": {
+            "obs_file": "",
+            "obs_var": "",
+            "obs_src": "",
+            "model_var": "ra",
+            "plot_range_map": [
+                0.5,
+                4.5
+            ],
+            "plot_range_sca": [
+                0.5,
+                4.5
+            ],
+            "plot_range_diff": [
+                -2,
+                2
+            ],
+            "plot_range_ratio": [
+                0.5,
+                2
+            ],
+            "plot_range_zonal": [
+                0,
+                3.5
+            ],
+            "plot_range_fit": [
+                0,
+                4
+            ],
+            "corr_factor_model": 31536000,
+            "long_name": "Autotrophic Respiration",
+            "title": "$R_{a}$",
+            "unit": "$kgC/m^2/year$",
+            "color_scale": "viridis_r"
+        },
+        "rh": {
+            "obs_file": "",
+            "obs_var": "",
+            "obs_src": "",
+            "model_var": "rh",
+            "plot_range_map": [
+                0.5,
+                4.5
+            ],
+            "plot_range_sca": [
+                0.5,
+                4.5
+            ],
+            "plot_range_diff": [
+                -2,
+                2
+            ],
+            "plot_range_ratio": [
+                0.5,
+                2
+            ],
+            "plot_range_zonal": [
+                0,
+                3.5
+            ],
+            "plot_range_fit": [
+                0,
+                4
+            ],
+            "corr_factor_model": 31536000,
+            "long_name": "Heterotrophic Respiration",
+            "title": "$R_{h}$",
+            "unit": "$kgC/m^2/year$",
+            "color_scale": "viridis_r"
+        },
+        "tau_c": {
+            "obs_file": "Observation/tau_obs4mipstandard_withCarvalhais2014mask/tau_ctotal_fx_Carvalhais2014_BE_gn_full.nc",
+            "obs_var": "tau_ctotal",
+            "model_var": "cTau",
+            "obs_src": "C2014",
+            "plot_range_map": [
+                2,
+                256
+            ],
+            "plot_range_sca": [
+                2,
+                256
+            ],
+            "plot_range_diff": [
+                -25,
+                25
+            ],
+            "plot_range_ratio": [
+                0.5,
+                2
+            ],
+            "plot_range_zonal": [
+                2,
+                1000
+            ],
+            "plot_range_fit": [
+                2,
+                1000
+            ],
+            "corr_factor_model": 1,
+            "long_name": "Ecosystem Turnover Time",
+            "title": "$\\tau$",
+            "unit": "$years$",
+            "color_scale": "plasma_r"
+        },
+        "c_total": {
+            "obs_file": "Observation/tau_obs4mipstandard_withCarvalhais2014mask/ctotal_fx_Carvalhais2014_BE_gn_full.nc",
+            "obs_var": "ctotal",
+            "model_var": "cTotal",
+            "obs_src": "C2014",
+            "plot_range_map": [
+                0,
+                75
+            ],
+            "plot_range_sca": [
+                0,
+                100
+            ],
+            "plot_range_diff": [
+                -25,
+                25
+            ],
+            "plot_range_ratio": [
+                0.5,
+                2
+            ],
+            "plot_range_zonal": [
+                0.5,
+                300
+            ],
+            "plot_range_fit": [
+                0,
+                300
+            ],
+            "corr_factor_model": 1,
+            "long_name": "Total Ecosystem Carbon",
+            "title": "$C_{total}$",
+            "unit": "$kgC/m^2$",
+            "color_scale": "plasma_r"
+        }
+    },
+    "pr_unit_corr": {
+        "obs": 1,
+        "clm4": 31536000,
+        "clm5": 31536000,
+        "lpj": 31536000,
+        "jsbach": 31536000,
+        "jules": 31536000,
+        "isba": 31536000,
+        "ipsl": 31536000
+    },
+    "reso": "hlf",
+    "carbon_stores": [
+        "c_soil",
+        "c_veg",
+        "c_total"
+    ],
+    "filesep": "/",
+    "syear": "1990",
+    "eyear": "2010",
+    "syear_ts": "1960",
+    "eyear_ts": "2010",
+    "pgc_vars": [
+        "gpp",
+        "c_total",
+        "c_soil",
+        "c_veg"
+    ],
+    "carbon_fluxes": [
+        "gpp",
+        "npp",
+        "ra",
+        "rh"
+    ],
+    "fill_val": NaN,
+    "_scn": "S3",
+    "model": {
+        "names": [
+            "clm4",
+            "clm5",
+            "jsbach",
+            "jules",
+            "lpj",
+            "ipsl",
+            "isba"
+        ],
+        "colors": {
+            "clm5": "#e6194B",
+            "clm4": "#f58231",
+            "jsbach": "#1E88E5",
+            "jules": "#f032e6",
+            "lpj": "#1E8449",
+            "ipsl": "#ac9c16",
+            "isba": "#4cb517",
+            "obs": "k"
+        },
+        "isbaScns": [
+            "S2",
+            "S3"
+        ]
+    },
+    "aridity": {
+        "regions": [
+            "Arid",
+            "Semi-arid",
+            "Sub-humid",
+            "Humid"
+        ],
+        "bounds": [
+            0.5,
+            1.5,
+            2.5,
+            3.5,
+            4.5
+        ],
+        "colors": [
+            "#F44336",
+            "#ac9c16",
+            "#4cb517",
+            "#1E88E5"
+        ],
+        "perc_range": [
+            5,
+            95
+        ]
+    },
+    "fig_settings": {
+        "ax_fs": 9,
+        "fig_dir": "/home/skoirala/g_ownCloud/tauManuscript/figs_18032021",
+        "fig_suffix": "_ari_modis_1990-2010",
+        "fig_format": "png",
+        "fig_dpi": 450,
+        "fit_method": "quad",
+        "eval_region": "aridity",
+        "zonal": {
+            "bandsize_mean": 5,
+            "bandsize_corr": 5,
+            "min_points": 20,
+            "z_corr": 2.33,
+            "method_corr": "pearson",
+            "perc_range": [
+                5,
+                95
+            ],
+            "p_thres": 0.05
+        }
+    }
+}
